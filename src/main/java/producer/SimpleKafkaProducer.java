@@ -8,11 +8,13 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.kafka.connect.json.JsonSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
 public class SimpleKafkaProducer {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(SimpleKafkaProducer.class);
     private static final String INPUT_TOPIC = "input-topic";
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     private static final String BOOTSTRAP_SERVERS = "localhost:9092";
@@ -33,7 +35,7 @@ public class SimpleKafkaProducer {
                 for (User user : users) {
                     kafkaProducer.send(new ProducerRecord<>(INPUT_TOPIC, user.getAtmLocation(), convertToTree(user)));
                 }
-                System.out.println("produced record count: " + users.size());
+                LOGGER.info("Produced record count: {}", users.size());
             }
         };
     }
