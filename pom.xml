@@ -18,6 +18,7 @@
         <lombok-version>1.18.30</lombok-version>
         <jackson-core>2.15.3</jackson-core>
         <kafks-connect-json>3.5.0</kafks-connect-json>
+        <commons-configuration-version>1.6</commons-configuration-version>
         <!--plugin versions-->
         <maven-compiler-version>3.8.1</maven-compiler-version>
         <java-version>11</java-version>
@@ -76,6 +77,12 @@
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-json</artifactId>
             <version>${kafks-connect-json}</version>
+        </dependency>
+        <!--Property file loading -->
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>${commons-configuration-version}</version>
         </dependency>
     </dependencies>
     <build>
