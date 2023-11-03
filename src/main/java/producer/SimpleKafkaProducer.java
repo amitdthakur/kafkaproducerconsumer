@@ -1,6 +1,5 @@
 package producer;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import model.User;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.slf4j.Logger;

@@ -1,16 +1,29 @@
 # Java kafka producer and consumer
-You will need 2 topics before running the application.
 
-**Instructions**: 
+You will need two(2) topics before running the application.
 
-If you have downloaded the kafka on your **local** system.
+This will publish user data to input topic please refer model.User
 
-GoTo Folder  C:\kafka_2.12-2.3.0\
+**Instructions for Windows OS**:
 
-- Zookeeper start:
+If you have downloaded the kafka on your **Local** system.
+
+Go to downloaded kafka Folder C:\${kafka_version_downloaded}\
+
+- **Zookeeper start:**
   .\bin\windows\zookeeper-server-start .\config\zookeeper.properties
-- Starting kafka server
+- **Starting kafka server:**
   .\bin\windows\kafka-server-start .\config\server.properties
-- .\bin\windows\kafka-topics --create --topic {topicName} --bootstrap-server {bootStrapserverIpwithPort} --partitions 1 --replication-factor 1
+- **Creation of topic:** .\bin\windows\kafka-topics --create --topic {topicName} --bootstrap-server
+  {bootStrapserverIpwithPort} --partitions 1
+  --replication-factor 1
 
-Also make sure to replace the **topic name** and **bootstrap servers** value in java class.
+Changes:
+
+- Replace the **INPUT_TOPIC**,**TOPIC_NAME** from java class
+- Change the values in consumer and producer properties file.
+
+Future enhancements:
+
+1. Apache kafka topics will be created in docker.
+2. Move Input topic and output topic to property file.
